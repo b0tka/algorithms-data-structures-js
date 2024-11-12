@@ -108,21 +108,20 @@ export class SingleLinkedList {
   }
 
   reverse() {
+    if (this.head == null) {
+      return
+    }
     let node = this.head
     let prev = null
-    let next = node.next
-
     while (node != null) {
+      let next = node.next
       if (prev == null) {
         this.tail = node
-        next = node.next
         node.next = null
       } else if (node.next == null) {
         this.head = node
-        next = node.next
         node.next = prev
       } else {
-        next = node.next
         node.next = prev
       }
       prev = node
