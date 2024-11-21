@@ -30,7 +30,7 @@ export class Queue {
       dequeuedNode.next = null
     }
     this.length--
-    return dequeuedNode
+    return dequeuedNode.value
   }
 }
 
