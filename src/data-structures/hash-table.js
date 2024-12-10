@@ -47,4 +47,30 @@ export class HashTable {
     return null
   }
 
+  keys() {
+    const keys = []
+    for (let entries of this.keyMap) {
+      if (entries == null) {
+        continue;
+      }
+      for (let entry of entries) {
+        keys.push(entry[0])
+      }
+    }
+    return keys
+  }
+
+  values() {
+    const values = []
+    for (let entries of this.keyMap) {
+      if (entries == null) {
+        continue;
+      }
+      for (let entry of entries) {
+        values.push(entry[1])
+      }
+    }
+    return values
+  }
+
 }
